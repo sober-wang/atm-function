@@ -10,5 +10,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 
 from bar import main
+from bar import searchfct
+from bar import selectMammey
+from bar import userenter
 
-main.welcom()
+CONF_DIR = '%s%s'%(BASE_DIR,r'\conf\atmuser.txt')
+print(CONF_DIR)
+
+main.welcom(CONF_DIR)
+main.selectfunction()
+#userenter.unt(CONF_DIR)
+#sltnmb = searchfct.searchfct()
+#print(sltnmb)
+
+#if int(sltnmb) == 4:
+#    selectMammey.bln(CONF_DIR)
+#elif int(sltnmb) == 2:
+#    pass
