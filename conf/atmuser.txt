@@ -1,0 +1,1 @@
+{"username": "sober", "password": "123456", "lnfcd": 20000, "nowlimt": 9350, "redumumy": 20000, "debt": -150}
