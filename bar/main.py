@@ -4,7 +4,6 @@
 #日期：2018年3月13日
 
 import json
-import getpass
 
 def adron(fun):
     #使用装饰器实现用户登录认证
@@ -15,24 +14,32 @@ def adron(fun):
             username = msg_lod['username']
             password = msg_lod['password']
         inpt_username = input("Please UserName:")
-        inpt_password = getpass.getpass("Please Password:")
+        inpt_password = input("Please Password:")
         if inpt_username == username and inpt_password == password:
-            fun(*args,**kwargs)
+             slt = fun(*args,**kwargs)
+             return slt
         else:
             print("UserName and Password ERROR!")
     return unt
 
 @adron
 def welcom(msgf):
-    #欢迎标语
+    '''
+    欢迎标语
+    '''
     print('welcome to CRS!')
+    return selectfunction()
 
 def selectfunction():
+    '''
+    功能选项函数
+    :return 选择项:
+    '''
     fct = ['购物','取款','还款','查询']
     n = 1
     print("请选择你想使用的功能：")
     for ct in fct:
         print("%s:%s"%(n,ct))
         n +=1
-    user_n = input("请选择想用的功能：")
+    user_n = input("请选择想用的功能,(如果输入q将会退出程序)：")
     return user_n
