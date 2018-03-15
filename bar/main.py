@@ -4,6 +4,7 @@
 #日期：2018年3月13日
 
 import json
+import sys
 
 def adron(fun):
     #使用装饰器实现用户登录认证
@@ -20,6 +21,7 @@ def adron(fun):
              return slt
         else:
             print("UserName and Password ERROR!")
+            sys.exit()
     return unt
 
 @adron
