@@ -13,20 +13,25 @@ from bar import main
 from bar import selectMammey
 from bar import takemoney
 from bar import repay
+from bar import upshopcart
 
 CONF_DIR = '%s%s'%(BASE_DIR,r'\conf\atmuser.txt')
+SHOP_DIR = '%s%s'%(BASE_DIR,r'\conf\comdity-infmt.txt')
 #print(CONF_DIR)
 LOG_DIR = '%s%s'%(BASE_DIR,r'\log')
 while True:
     sltnmb = main.welcom(CONF_DIR)
-    if int(sltnmb) == 4:
-        selectMammey.bln(CONF_DIR)
+    if sltnmb == 'q':
+        print('Good bye!')
+        break
     elif int(sltnmb) == 2:
         t_vlue = takemoney.tkm(CONF_DIR,LOG_DIR)
         if t_vlue == 'no':
             sys.exit()
     elif int(sltnmb) == 3:
         repay.rpy(CONF_DIR,LOG_DIR)
-    elif sltnmb == 'q':
-        print('Good bye!')
-        break
+    elif int(sltnmb) == 4:
+        selectMammey.bln(CONF_DIR)
+
+    elif int(sltnmb) == 1:
+        showlist = upshopcart.shopmsg(SHOP_DIR)

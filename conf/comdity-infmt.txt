@@ -1,0 +1,4 @@
+IPhone X:8888
+notebook:5000
+instant noodles:3
+DVD:1

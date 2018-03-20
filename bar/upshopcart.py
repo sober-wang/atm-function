@@ -5,8 +5,11 @@
 
 import os
 
-waybill = open('./comdity-infmt.txt','r')
-wb_list = waybill.readlines()
+def shopmsg(shmf):
+    waybill = open(shmf,'r')
+    wb_list = waybill.readlines()
+    return wb_list
+'''
 shopcart = []
 
 #利用os.path.exists()方法判断文件是否存在
@@ -65,3 +68,4 @@ while True:
 
 
 waybill.close()
+'''
